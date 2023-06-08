@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Register Page</title>
+<link rel="stylesheet" href="register_style.css">
+</head>
+<body>
+	<div class="signupFrm">
+		<form action="registration" method="post" class="form">
+			<h1 class="title">
+				<h1 style="color: 2F4F4F;">Bhuvan's Flight</h1>
+				<h3 style="color: B0E0E6;">Register</h3>
+				<div class="inputContainer">
+					<input type="text" class="input" name="name" placeholder="."
+						required> <label for="" class="label">Name</label>
+				</div>
+
+				<div class="inputContainer">
+					<input type="email" class="input" name="email" placeholder="."
+						required> <label for="" class="label">Email</label>
+				</div>
+
+				<div class="inputContainer">
+					<input type="number" class="input" name="number" placeholder="."
+						required> <label for="" class="label">Phone Number</label>
+				</div>
+				<div class="inputContainer">
+					<label for="Male">Male</label><input type="radio" name="gender"
+						value="male" required> <label for="Female">Female</label><input
+						type="radio" name="gender" value="female" required> <label
+						for="Other">Other</label><input type="radio" name="gender"
+						value="other" required>
+				</div>
+
+				<div class="inputContainer">
+					<input type="number" class="input" name="aadhaar" placeholder="."
+						required> <label for="" class="label">Aadhaar
+						Number</label>
+				</div>
+
+
+				<div class="inputContainer">
+					<input type="text" class="input" name="place" placeholder="."
+						required> <label for="" class="label">Place</label>
+				</div>
+				<div class="inputContainer">
+					<input type="password" class="input" id="password" name="password"
+						placeholder="." required> <label for="" class="label">Password</label>
+				</div>
+				<div class="inputContainer">
+					<input type="password" class="input" id="confirm_password"
+						placeholder="." required> <label for="" class="label">Confirm
+						Password </label>
+				</div>
+				<input type="submit" class="submitBtn" value="Sign up">
+				<h4>
+					<a href="index.html">Home</a>&nbsp&nbsp&nbsp&nbsp <a
+						href="login.html">Login</a>
+				</h4>
+			</h1>
+		</form>
+	</div>
+	<script>
+		var password = document.getElementById("password"), confirm_password = document
+				.getElementById("confirm_password");
+
+		function validatePassword() {
+			if (password.value != confirm_password.value) {
+				confirm_password.setCustomValidity("Passwords Don't Match");
+			} else {
+				confirm_password.setCustomValidity('');
+			}
+		}
+
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+	</script>
+</body>
+</html>
